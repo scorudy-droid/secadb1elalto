@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminario de Formación Moderna</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de FontAwesome para las tres líneas del menú -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- CABECERA / NAVEGACIÓN -->
+    <header class="navbar">
+        <a href="#inicio" class="logo-container">
+            <img src="logoasambleas.png" alt="Logo Asambleas" class="logo-img">
+        </a>
+
+        <!-- BOTÓN HAMBURGUESA (Aparece en pantallas pequeñas) -->
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- ENLACES DE NAVEGACIÓN -->
+        <nav class="nav-links" id="nav-menu">
+            <a href="#inicio" class="nav-item">Inicio</a>
+		<a href="http://158.172.234.177/sefmad/PAGINAS/admin/LOGIN.asp">Adm</a>
+	    <a href="http://158.172.234.177/sefmad/Votos_est/SISDOCINI.asp">Docentes</a>
+	    <a href="http://158.172.234.177/sefmad/PAGINAS/ACCESOCURSANTES.asp">Estudiantes</a>
+            <a href="http://158.172.234.177/SEFMAD/new/PlanBasico2013vp.pdf" class="btn btn-secondary">Plan de Estudios</a>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN HERO CON CARRUSEL DE FONDO -->
+    <section id="inicio" class="hero">
+        <div class="carousel-container">
+            <div class="carousel-slide active"><img src="img/1.jpg" alt="Seminario 1"></div>
+            <div class="carousel-slide"><img src="img/2.jpg" alt="Seminario 2"></div>
+            <div class="carousel-slide"><img src="img/3.jpg" alt="Seminario 3"></div>
+		<div class="carousel-slide"><img src="img/4.jpg" alt="Seminario 3"></div>
+		<div class="carousel-slide"><img src="img/5.jpg" alt="Seminario 3"></div>
+		<div class="carousel-slide"><img src="img/6.jpg" alt="Seminario 3"></div>
+        </div>
+
+        <div class="carousel-overlay"></div>
+
+        <div class="hero-content">
+            <span class="badge">Próximo Seminario - En Vivo</span>
+            <h1>Impulsa tu Futuro Profesional con Formación de Vanguardia</h1>
+            <p>Únete al seminario intensivo donde aprenderás las herramientas clave y estrategias prácticas para dominar el mercado actual.</p>
+            <div class="hero-buttons">
+                <a href="#registro" class="btn btn-primary">Asegurar mi Cupo <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#beneficios" class="btn btn-outline-white">Saber Más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE BENEFICIOS -->
+    <section id="beneficios-section" class="features">
+        <div class="section-title">
+            <h2>¿Qué vas a aprender?</h2>
+            <p>Diseñado por expertos para acelerar tu crecimiento.</p>
+        </div>
+        <div class="grid-features">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Estrategias Ágiles</h3>
+                <p>Aprende las metodologías que utilizan las empresas líderes para optimizar resultados.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Herramientas Digitales</h3>
+                <p>Dominio práctico y moderno para automatizar y mejorar tu flujo diario.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-certificate"></i></div>
+                <h3>Certificación</h3>
+                <p>Recibe un certificado avalado para destacar tu perfil al terminar tus estudios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE REGISTRO -->
+    <section id="registro" class="cta-section">
+        <div class="cta-container">
+            <h2>Regístrate Gratis Hoy Mismo</h2>
+            <p>Los cupos son limitados. Introduce tus datos para recibir el enlace de acceso al seminario.</p>
+            <form class="register-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Enviar Registro</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; SEC-ADB. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT PARA EL MENÚ INTERACTIVO Y CARRUSEL -->
+    <script>
+        // Lógica del Carrusel
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000);
+
+        // Lógica del Menú Desplegable Móvil
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita que el clic se propague
+            navMenu.classList.toggle('open');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark'); // Cambia a una 'X' al abrir
+        });
+
+        // Cerrar el menú al hacer clic en un enlace
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('open');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            }
+        });
+    </script>
+</body>
+</html>
