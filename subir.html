@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir TXT con Node.js</title>
+</head>
+<body>
+    <h2>Subir archivo de texto al servidor</h2>
+    
+    <!-- El action apunta exactamente a la ruta POST de Node.js -->
+    <form action="subir.html" method="POST" enctype="multipart/form-data">
+        <label for="archivo">Selecciona un archivo .txt:</label>
+        <input type="file" name="archivo" id="archivo" accept=".txt" required>
+        <br><br>
+        <button type="submit">Enviar al servidor</button>
+    </form>
+</body>
+</html>
