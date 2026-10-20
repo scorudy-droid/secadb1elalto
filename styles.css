@@ -108,10 +108,17 @@ body {
     align-items: center;
 }
 
+/* MODIFICACIÓN: Se incrementó el tamaño del logo para mayor visibilidad */
 .logo-img {
-    height: 46px;
+    height: 68px; /* Antes 46px */
     width: auto;
     object-fit: contain;
+}
+
+.navbar-brand img, .logo img {
+    height: auto;
+    max-height: 80px; 
+    width: auto;
 }
 
 /* CONTENEDOR INTERNO EXCLUSIVO PARA LAS RAYAS CSS */
@@ -190,7 +197,7 @@ body {
         font-size: 1.1rem;
         padding: 14px 16px;
         border-radius: 8px;
-        border-bottom: none; /* Adiós al borde anticuado */
+        border-bottom: none; 
         transition: var(--transition);
         white-space: nowrap;
     }
@@ -223,7 +230,7 @@ body {
         display: flex;
         flex-direction: row;
         padding: 0;
-        gap: 8px; /* Ajuste preciso */
+        gap: 8px; 
         flex-wrap: wrap;
         justify-content: flex-end;
         align-items: center;
@@ -241,7 +248,6 @@ body {
         transition: var(--transition);
     }
 
-    /* Efecto moderno sutil en barra superior */
     .nav-links a:not(.btn):hover {
         color: var(--primary-color);
         background-color: rgba(123, 17, 19, 0.05);
@@ -254,13 +260,14 @@ body {
 }
 
 /* --- COMPONENTES DE LA PÁGINA --- */
+/* MODIFICACIÓN: Removido padding lateral (0 5%) para que el carrusel ocupe todo el ancho de la pantalla */
 .hero {
     position: relative;
     width: 100%;
     height: calc(100vh - 80px);
     display: flex;
     align-items: center;
-    padding: 0 5%;
+    padding: 0; /* Cambio crítico para ancho completo */
     overflow: hidden;
 }
 
@@ -304,11 +311,14 @@ body {
     z-index: 2;
 }
 
+/* MODIFICACIÓN: Se añade padding lateral aquí para resguardar los márgenes del texto interno */
 .hero-content {
     position: relative;
     z-index: 3;
     max-width: 650px;
     color: var(--white);
+    padding-left: 5%; /* Mantiene los textos alineados a la rejilla global */
+    padding-right: 20px;
 }
 
 .badge {
@@ -426,4 +436,3 @@ body {
     box-shadow: 0 0 0 3px rgba(123, 17, 19, 0.2);
 }
 
-.footer { text-align: center; padding: 40px; border-top: 1px solid #e2e8f0; color: var(--text-muted); font-size: 0.9rem; }
