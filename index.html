@@ -45,11 +45,11 @@
         <div class="carousel-overlay"></div>
 
         <div class="hero-content">
-            <span class="badge">Próximo Seminario - En Vivo</span>
-            <h1>Impulsa tu Futuro Profesional con Formación de Vanguardia</h1>
-            <p>Únete al seminario intensivo donde aprenderás las herramientas clave y estrategias prácticas para dominar el mercado actual.</p>
+            <span class="badge"> </span>
+            <h1>SEC-ADB EL ALTO 1</h1>
+            <p>Únete al seminario donde aprenderás las herramientas clave y estrategias prácticas.</p>
             <div class="hero-buttons">
-                <a href="#registro" class="btn btn-primary">Asegurar mi Cupo <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#registro" class="btn btn-primary">Contacto <i class="fa-solid fa-arrow-right"></i></a>
                 <a href="#beneficios" class="btn btn-outline-white">Saber Más</a>
             </div>
         </div>
@@ -83,22 +83,107 @@
     <!-- SECCIÓN DE REGISTRO -->
     <section id="registro" class="cta-section">
         <div class="cta-container">
-            <h2>Regístrate Gratis Hoy Mismo</h2>
-            <p>Los cupos son limitados. Introduce tus datos para recibir el enlace de acceso al seminario.</p>
-            <form class="register-form">
+            <h2>Contacto</h2>
+            <p>Introduce tus datos para más Información del Seminario.</p>
+            <form action="index.html" method="post" target="_parent" class="register-form">
                 <div class="form-group">
                     <input type="text" placeholder="Nombre completo" required>
                 </div>
                 <div class="form-group">
                     <input type="email" placeholder="Correo electrónico" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Enviar Registro</button>
-            </form>
+
+
+<div class=""><p class="help-block help-block-error"></p></div>
+
+
+
+  <div class="form-group field-contactform-recaptcha"></div>
+
+
+<div class=""><p class="help-block help-block-error"></p></div>
+
+
+
+<!-- Área del CAPTCHA visual -->
+        <div class="captcha-wrapper">
+            <div class="captcha-box" id="codigo-captcha"></div>
+            <button type="button" class="btn-refresh" onClick="generarNuevoCaptcha()">🔄</button>
         </div>
+
+       
+            <p>
+              <label for="captcha-input">Introduce el código:</label>
+              <input type="text" id="captcha-input" required placeholder="Escribe el CAPTCHA de arriba">
+            </p>
+    
+            <p>
+              <label>
+                <input type="checkbox" required name="checkbox" id="checkbox">
+              </label>
+            Estoy de acuerdo con los Datos Ingresados</p>
+                <button type="submit" class="btn btn-primary btn-block">Enviar Registro</button>
+<!-- Aquí se mostrarán dinámicamente los mensajes de error o éxito -->
+        <div id="mensaje-status"></div>  
+          </form>
+
+        </div>
+
     </section>
 
+<section  class="cta-section">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.548922623506!2d-68.17808352485483!3d-16.49836278424502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf96bb8c29cd%3A0x39167150e35593d1!2sSEC-ADB%201%20EL%20ALTO!5e0!3m2!1ses-419!2sbo!4v1792514268500!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</section>
+<script>
+    let captchaGenerado = "";
+
+    // Genera un código CAPTCHA aleatorio de 6 caracteres
+    function generarNuevoCaptcha() {
+        const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        captchaGenerado = "";
+        for (let i = 0; i < 6; i++) {
+            captchaGenerado += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+        }
+        document.getElementById("codigo-captcha").innerText = captchaGenerado;
+        document.getElementById("captcha-input").value = ""; 
+    }
+
+    // Valida el código en el momento de presionar el botón de enviar
+    function validarFormulario(event) {
+        const inputUsuario = document.getElementById("captcha-input").value;
+        const mensajeStatus = document.getElementById("mensaje-status");
+
+        // Convertimos ambos a mayúsculas para evitar problemas de case-sensitivity (A === a)
+        if (inputUsuario.toUpperCase() !== captchaGenerado.toUpperCase()) {
+            // 1. BLOQUEAR EL ENVÍO: Evita que el formulario recargue la página o mande datos
+            event.preventDefault(); 
+            
+            // 2. MOSTRAR MENSAJE DE ERROR
+            mensajeStatus.style.color = "red";
+            mensajeStatus.innerText = "❌ Error: El código CAPTCHA es incorrecto. Inténtalo de nuevo.";
+            
+            // 3. REFRESCAR EL CAPTCHA por seguridad
+            generarNuevoCaptcha();
+            return false; 
+        }
+
+        // MOSTRAR MENSAJE DE ÉXITO (Si el código es correcto, este bloque se ejecuta)
+        //mensajeStatus.style.color = "green";
+        //mensajeStatus.innerText = "✅ ¡CAPTCHA correcto! Enviando formulario...";
+        
+	// Cambia "miFormulario" por el ID real que tenga tu etiqueta <form>
+    const formulario = document.getElementById("w0"); 
+    
+    
+   
+    }
+
+    // Inicializar el CAPTCHA al cargar la página
+    window.onload = generarNuevoCaptcha;
+</script>
+
     <footer class="footer">
-        <p>&copy; SEC-ADB. Todos los derechos reservados.</p>
+        <p>&copy; SEC-ADB 1 EL ALTO. Todos los derechos reservados.</p>
     </footer>
 
     <!-- SCRIPT PARA EL MENÚ INTERACTIVO Y CARRUSEL -->
