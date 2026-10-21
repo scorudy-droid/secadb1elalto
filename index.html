@@ -5,10 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seminario de Formación SEC-ADB 1 ELA ALTO</title>
     <link rel="stylesheet" href="styles.css">
+
     <!-- Iconos de FontAwesome para las tres líneas del menú -->
     <link rel="stylesheet" href="https://cloudflare.com">
+
+ <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+
+  <link rel="stylesheet" href="styles1.css?v=20260610">
 </head>
 <body>
+
+   <!-- Skip link -->
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <!-- ─── MODAL INICIO DE CLASES ─── -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar aviso">✕</button>
+      <span class="modal-kicker">Aviso Importante</span>
+      <div class="modal-date">12<span>Diciembre</span></div>
+      <h2 class="modal-title" id="modal-title">¡Ya estamos<br><em>Terminando la Gestión!</em></h2>
+      <p class="modal-text">Seminario Ministerial Teológico SEC - ADB 1 EL ALTO.</p>
+      <div class="modal-actions">
+        <a href="#registro" class="btn btn-primary modal-btn-inscribir">Contacto</a>
+        <button class="modal-link-close" id="modal-link-close">Recordármelo después</button>
+      
+<p><script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+<script>
+$(document).ready(function(){
+    $("#includeContenido").load("http://158.172.234.177/sefmad/comandante.txt");
+});
+</script><div id="includeContenido"></div></p>
+
+
+
+</div>
+    </div>
+  </div>
+
+        
+
+
 
     <!-- CABECERA / NAVEGACIÓN -->
     <header class="navbar">
@@ -32,6 +75,7 @@
     </header>
 
     <!-- SECCIÓN HERO CON CARRUSEL DE FONDO -->
+ <main id="main">
     <section id="inicio" class="hero">
         <div class="carousel-container">
             <div class="carousel-slide active"><img src="img/1.jpg" alt="Seminario 1"></div>
@@ -44,15 +88,27 @@
 
         <div class="carousel-overlay"></div>
 
-        <div class="hero-content">
-            <span class="badge"> </span>
-            <h1></h1>
-            <p>Únete al seminario donde aprenderás las herramientas clave y estrategias prácticas.</p>
-            <div class="hero-buttons">
-                <a href="#registro" class="btn btn-primary">Contacto <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#beneficios" class="btn btn-outline-white">Saber Más</a>
-            </div>
+        <div class="hero-bg">
+        <img src="assets/img/estudiantes-mujeres.jpg" alt="Estudiantes del SEMITE en clase" fetchpriority="high" loading="eager" class="hero-bg-img">
+        <div class="hero-bg-tint"></div>
+      </div>
+      <div class="hero-grain"></div>
+
+      <div class="hero-inner">
+        <div class="hero-logo-wrap reveal">
+          <img src="logosecadb.png" alt="Logo SECADB1 class="hero-logo" width="140" height="140">
         </div>
+        <p class="hero-kicker reveal">Las Asambleas de Dios de Bolivia · ADB</p>
+        <h1 class="hero-title reveal">
+          Dile Sí al<br>
+          <em>Llamado de Dios</em>
+        </h1>
+        <p class="hero-sub reveal">Capacítate para servir a Dios con excelencia · Seminario Ministerial Teológico SEMITE ADB</p>
+        <div class="hero-foot reveal">
+          <div class="hero-horario">
+            <span class="dot-pulse"></span>
+            Lun – Jue &nbsp;·&nbsp; 7:00 pm – 9:40 pm
+          </div>
     </section>
 
     <!-- SECCIÓN DE BENEFICIOS -->
@@ -230,5 +286,43 @@
             }
         });
     </script>
+
+ <!-- Scripts: defer in order -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('modal-overlay');
+      function closeModal() { overlay.classList.add('hidden'); }
+      document.getElementById('modal-close').addEventListener('click', closeModal);
+      document.getElementById('modal-link-close').addEventListener('click', closeModal);
+      document.querySelector('.modal-btn-inscribir').addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
+
+ <!-- Botón flotante WhatsApp -->
+  <a class="wa-float" href="https://wa.me/59172591554?text=Hola%2C%20me%20puede%20dar%20mas%20informacion" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg viewbox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- Scripts: defer in order -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('modal-overlay');
+      function closeModal() { overlay.classList.add('hidden'); }
+      document.getElementById('modal-close').addEventListener('click', closeModal);
+      document.getElementById('modal-link-close').addEventListener('click', closeModal);
+      document.querySelector('.modal-btn-inscribir').addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
+
+
+  <script defer="" src="lib/gsap.min.js"></script>
+  <script defer="" src="lib/ScrollTrigger.min.js"></script>
+  <script defer="" src="lib/manifest.js"></script>
+  <script defer="" src="main.js?v=20260610"></script>
 </body>
 </html>
